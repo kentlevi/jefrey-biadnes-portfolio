@@ -18,26 +18,26 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   ];
 
   useEffect(() => {
-    // Elegant incremental speed for premium feel
+    // Elegant incremental speed for premium feel, optimized for speed
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
           setTimeout(() => {
             onComplete();
-          }, 800);
+          }, 350);
           return 100;
         }
         
         // Varying speed increments
         const remaining = 100 - prev;
         const increment = remaining > 50 
-          ? Math.floor(Math.random() * 15) + 5 
-          : Math.floor(Math.random() * 8) + 2;
+          ? Math.floor(Math.random() * 20) + 10 
+          : Math.floor(Math.random() * 12) + 4;
           
         return Math.min(prev + increment, 100);
       });
-    }, 150);
+    }, 80);
 
     return () => clearInterval(timer);
   }, [onComplete]);

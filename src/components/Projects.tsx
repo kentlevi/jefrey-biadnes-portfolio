@@ -1,7 +1,7 @@
 import { Reveal } from "./ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
-import imgEnterprise from "../assets/images/enterprise_db_dashboard_1781270151053.jpg";
-import imgApi from "../assets/images/cariton_delivery_api_1781270166138.jpg";
+import imgEnterprise from "../assets/images/enterprise_db_dashboard_1781270151053.webp";
+import imgApi from "../assets/images/cariton_delivery_api_1781270166138.webp";
 
 export default function Projects() {
   const projects = [
@@ -54,6 +54,7 @@ export default function Projects() {
                   <img 
                     src={project.image} 
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-full object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-[0.16,1,0.3,1]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050506]/90 via-[#050506]/10 to-transparent pointer-events-none"></div>
